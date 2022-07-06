@@ -57,7 +57,6 @@ extension matrix_float4x4 {
     return matrix_multiply(self, scaledMatrix)
   }
   
-  // angle should be in radians
   init(rotationAngle angle: Float, x: Float, y: Float, z: Float) {
     let c = cos(angle)
     let s = sin(angle)
@@ -152,7 +151,6 @@ extension matrix_float4x4: CustomReflectable {
 }
 
 extension float4: CustomReflectable {
-  
   public var customMirror: Mirror {
     let sx = String(format: "%  .4f", x)
     let sy = String(format: "%  .4f", y)

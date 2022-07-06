@@ -17,9 +17,9 @@ class XOGameScene: Scene {
 
   override init(device: MTLDevice, size: CGSize) {
     
-    quad = Plane(device: device,
+      quad = Plane(device: device,
                  imageName: "xo.png")
-    quad2 = Plane(device: device,
+      quad2 = Plane(device: device,
                         imageName: "unnamed.png")
       quad3 = Plane(device: device,
                    imageName: "xo.png")

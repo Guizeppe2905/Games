@@ -11,8 +11,10 @@ import SwiftUI
 class WordleViewController: UIViewController {
     let keyboardVC = KeyboardViewController()
     let boardVC = BoardViewController()
+    let navigation = Navigation()
     let answers = ["почта", "лодка", "кошка", "рюмка", "вилка", "ложка", "повод", "полка", "дождь", "дуэль", "магия", "прием", "вклад", "анонс", "архив", "лесть", "длина", "стена", "плато", "декор", "топор", "собор", "дупло", "грудь", "опрос", "арбуз", "бокал", "пенал", "сюжет", "идеал", "шутка", "штука", "веник", "бровь", "школа", "мечта", "гонка", "русло", "халва", "совет", "салон", "кокос", "пицца", "адрес", "кешью", "выезд", "верба", "стиль", "сосна", "отказ", "берег", "радар", "пламя", "орган", "сетка", "фраза", "кровь", "гольф", "астра", "донка", "клоун", "спорт", "валет", "секта", "трава", "туман", "ручка", "жизнь", "пьеса", "чугун", "осень", "набор", "хурма", "тропа", "нефть", "весна", "ферзь", "ссора", "арена", "глист", "пятка", "налог", "оклад", "почка", "балет", "родня"]
     var answer = ""
+    var numberOfCorrectLetters = 0
     private var guesses: [[Character?]] = Array(repeating: Array(repeating: nil, count: 5), count: 8)
     private let buttonAgain: UIButton = {
         let buttonAgain = UIButton(frame: CGRect(x: 238, y: 610, width: 60, height: 60))
@@ -94,15 +96,8 @@ class WordleViewController: UIViewController {
         view.addSubview(boardVC.view)
         setupConstraints()
     }
-       @objc func didTapAgainButton() {
-           let keyWindow = UIApplication.shared.connectedScenes
-              .filter({$0.activationState == .foregroundActive})
-              .map({$0 as? UIWindowScene})
-              .compactMap({$0})
-              .first?.windows
-              .filter({$0.isKeyWindow}).first
-           keyWindow!.rootViewController = UINavigationController(rootViewController: WordleViewController())
-          keyWindow!.makeKeyAndVisible()
+    @objc func didTapAgainButton() {
+           navigation.navigateToVC(WordleViewController())
         }
     @objc func didTapRulesButton() {
         UIView.animate(withDuration: 0.5, animations: { [weak self] in
@@ -111,14 +106,7 @@ class WordleViewController: UIViewController {
         })
     }
     @objc func didTapBackButton() {
-        let keyWindow = UIApplication.shared.connectedScenes
-           .filter({$0.activationState == .foregroundActive})
-           .map({$0 as? UIWindowScene})
-           .compactMap({$0})
-           .first?.windows
-           .filter({$0.isKeyWindow}).first
-        keyWindow!.rootViewController = UINavigationController(rootViewController: StartViewController())
-       keyWindow!.makeKeyAndVisible()
+        navigation.navigateToVC(StartViewController())
     }
     @objc func closeRules() {
         UIView.animate(withDuration: 0.5, animations: { [weak self] in

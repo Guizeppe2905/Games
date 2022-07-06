@@ -39,5 +39,4 @@ extension Renderable {
     }
     return pipelineState
   }
-
 }

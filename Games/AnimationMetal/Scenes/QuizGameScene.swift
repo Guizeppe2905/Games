@@ -21,12 +21,9 @@ class GameScene: Scene {
       add(childNode: quad)
       cube.scale = SIMD3<Float>(repeating: 0.6)
       quad.scale = SIMD3<Float>(repeating: 0.5)
-   //   quad.position.z = -5
-  //    cube.position.z = 3
       quad.position.y = 1.5
       cube.position.y = 1.3
   }
-  
   override func update(deltaTime: Float) {
     cube.rotation.y += deltaTime
   }

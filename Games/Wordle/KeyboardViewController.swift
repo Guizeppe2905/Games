@@ -10,7 +10,6 @@ import UIKit
 protocol KeyboardViewControllerDelegate: AnyObject {
     func keyboardViewController (_ vc: KeyboardViewController, didTapKey letter: Character)
 }
-
 class KeyboardViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate, UICollectionViewDataSource {
     weak var delegate: KeyboardViewControllerDelegate?
     let letters = ["йцукенгшщзхъ", "фывапролджэё", "ячсмитьбю"]

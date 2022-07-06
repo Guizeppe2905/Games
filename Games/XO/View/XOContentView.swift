@@ -49,7 +49,6 @@ struct GameView: View {
             
         })
         }  .padding()
-        //    .ignoresSafeArea()
             .background(Color(Constants.Colors.basicGray!))
     }
       

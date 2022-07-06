@@ -10,13 +10,9 @@ import MetalKit
 class Renderer: NSObject {
     var device: MTLDevice
     var commandQueue: MTLCommandQueue
-    
     var scene: Scene?
-    
     var samplerState: MTLSamplerState?
-    
     var pipelineState: MTLRenderPipelineState?
-  
     init(device: MTLDevice) {
         self.device = device
         commandQueue = device.makeCommandQueue()!
@@ -32,22 +28,15 @@ class Renderer: NSObject {
 }
 extension Renderer: MTKViewDelegate {
     func mtkView(_ view: MTKView, drawableSizeWillChange size: CGSize) { }
-    
     func draw(in view: MTKView) {
         guard let drawable = view.currentDrawable,
               let descriptor = view.currentRenderPassDescriptor else { return }
-        
         let commandBuffer = commandQueue.makeCommandBuffer()
-        
         let commandEncoder = commandBuffer?.makeRenderCommandEncoder(descriptor: descriptor)
-        
         commandEncoder?.setFragmentSamplerState(samplerState, index: 0)
-        
         let deltaTime = 1 / Float(view.preferredFramesPerSecond)
-       
         scene?.render(commandEncoder: commandEncoder!,
                       deltaTime: deltaTime)
-
         commandEncoder?.endEncoding()
         commandBuffer?.present(drawable)
         commandBuffer?.commit()

@@ -14,7 +14,6 @@ var device: MTLDevice!
 var commandQueue: MTLCommandQueue!
 var renderer: Renderer?
 private lazy var xoMetalView: MTKView = {
-  //  let xoMetalView = MTKView(frame: CGRect(x: -30, y: -20, width: 200, height: 300))
     let xoMetalView = MTKView(frame: CGRect(x: 200, y: -20, width: 200, height: 300))
     xoMetalView.clearColor =  Constants.Colors.basicGrayMetal
     xoMetalView.device = MTLCreateSystemDefaultDevice()
@@ -27,7 +26,6 @@ private lazy var xoMetalView: MTKView = {
     return xoMetalView
 }()
 private lazy var xoButton: UIButton = {
- //  let quizButton = ButtonModel(frame: CGRect(x: 165, y: 40, width: 150, height: 40))
     let xoButton = ButtonModel(frame: CGRect(x: 25, y: 40, width: 170, height: 40))
     xoButton.setTitle("Х vc 0", for: .normal)
     return xoButton
@@ -43,8 +41,6 @@ override func viewDidLoad() {
 }
 @objc func didTapXOButton() {
     let xoVC = XOViewController()
-//      let xoContentView = GameView()
-    //     let xoCV = UIHostingController(rootView: xoContentView)
     navigationController?.pushViewController(xoVC, animated: true)
 }
 }

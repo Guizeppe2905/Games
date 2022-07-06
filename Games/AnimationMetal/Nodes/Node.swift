@@ -8,14 +8,12 @@
 import MetalKit
 
 class Node {
-  var name = "Untitled"
-  var children: [Node] = []
-  
-  var position =  SIMD3<Float>(0)
-  var rotation =  SIMD3<Float>(0)
-  var scale =  SIMD3<Float>(1)
-  
-  var modelMatrix: matrix_float4x4 {
+    var name = "Untitled"
+    var children: [Node] = []
+    var position =  SIMD3<Float>(repeating: 0)
+    var rotation =  SIMD3<Float>(repeating: 0)
+    var scale =  SIMD3<Float>(repeating: 1)
+    var modelMatrix: matrix_float4x4 {
     var matrix = matrix_float4x4(translationX: position.x,
                                  y: position.y, z: position.z)
     matrix = matrix.rotatedBy(rotationAngle: rotation.x,
