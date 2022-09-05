@@ -10,9 +10,9 @@ import UIKit
 protocol KeyboardViewControllerDelegate: AnyObject {
     func keyboardViewController (_ vc: KeyboardViewController, didTapKey letter: Character)
 }
+
 class KeyboardViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate, UICollectionViewDataSource {
     weak var delegate: KeyboardViewControllerDelegate?
-    weak var datasource: BoardViewControllerDataSource?
     let letters = ["йцукенгшщзхъ", "фывапролджэё", "ячсмитьбю"]
     private var keys: [[Character]] = []
     let collectionView: UICollectionView = {
@@ -32,9 +32,6 @@ class KeyboardViewController: UIViewController, UICollectionViewDelegateFlowLayo
         collectionView.delegate = self
         collectionView.dataSource = self
     }
-    public func reloadData() {
-        collectionView.reloadData()
-     }
     private func setupConstraints() {
         NSLayoutConstraint.activate([
             collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
@@ -61,17 +58,6 @@ extension KeyboardViewController {
         }
         let letter = keys[indexPath.section][indexPath.row]
         cell.configure(with: letter)
-        
-     //   cell.backgroundColor = datasource?.boxColor(at: indexPath)
- //       if datasource?.currentGuesses == nil {
-  //          cell.backgroundColor = Constants.Colors.basicGray
-  //      } else if datasource?.boxColor(at: indexPath) == Constants.Colors.indianRed {
-   //         cell.backgroundColor = Constants.Colors.indianRed
-    //    } else if datasource?.boxColor(at: indexPath) == Constants.Colors.forestGreen {
-     //       cell.backgroundColor = Constants.Colors.forestGreen
-      //  } else {
-       //     cell.backgroundColor = Constants.Colors.basicGray
-        //}
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -94,6 +80,5 @@ extension KeyboardViewController {
         collectionView.deselectItem(at: indexPath, animated: true)
         let letter = keys[indexPath.section][indexPath.row]
         delegate?.keyboardViewController(self, didTapKey: letter)
-        
     }
 }

@@ -14,8 +14,23 @@ class StartViewController: UIViewController {
     let xoMenuVC = XOMenuViewController()
     let wordleMenuVC = WordleMenuViewController()
     
+    var device: MTLDevice!
+    var commandQueue: MTLCommandQueue!
+    var renderer: Renderer?
+    private lazy var numbersMetalView: MTKView = {
+        let metalView = MTKView(frame: CGRect(x: 200, y: 230, width: 200, height: 330))
+        metalView.clearColor =  Constants.Colors.basicGrayMetal
+        metalView.device = MTLCreateSystemDefaultDevice()
+        guard let device = metalView.device else {
+          fatalError("error")
+        }
+        renderer = Renderer(device: device)
+        renderer?.scene = NumbersGameScene(device: device, size: view.bounds.size)
+        metalView.delegate = renderer
+        return metalView
+    }()
     private lazy var titleLabel: UILabel = {
-        let titleLabel = UILabel(frame: CGRect(x: 70, y: 140, width: 250, height: 150))
+        let titleLabel = UILabel(frame: CGRect(x: 70, y: 80, width: 250, height: 150))
         titleLabel.text = "ВО ЧТО ПОИГРАЕМ?!.."
         titleLabel.numberOfLines = 0
         titleLabel.textColor = Constants.Colors.basicOrange
@@ -23,12 +38,26 @@ class StartViewController: UIViewController {
         titleLabel.textAlignment = .center
         return titleLabel
     }()
+    private lazy var numbersButton: UIButton = {
+       let quizButton = ButtonModel(frame: CGRect(x: 25, y: 270, width: 170, height: 40))
+        quizButton.setTitle("Угадай число", for: .normal)
+        return quizButton
+    }()
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = Constants.Colors.basicGray
         view.addSubview(titleLabel)
+        view.addSubview(numbersButton)
+        view.addSubview(numbersMetalView)
         addChildren()
         setupConstraints()
+        numbersButton.addTarget(self,
+                         action: #selector(didTapNumbersButton),
+                         for: .touchUpInside)
+    }
+    @objc func didTapNumbersButton() {
+        let numbersVC = NumbersGameViewController()
+        navigationController?.pushViewController(numbersVC, animated: true)
     }
     private func addChildren() {
         addChild(quizMenuVC)

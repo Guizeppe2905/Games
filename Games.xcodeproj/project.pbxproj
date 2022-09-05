@@ -48,6 +48,10 @@
 		5181BA1C286E43D600D4CE03 /* planet-007.png in Resources */ = {isa = PBXBuildFile; fileRef = 5181BA1B286E43D600D4CE03 /* planet-007.png */; };
 		5181BA1E286E6BDF00D4CE03 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5181BA1D286E6BDF00D4CE03 /* LaunchViewController.swift */; };
 		5181BA20286F205900D4CE03 /* QuestionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5181BA1F286F205900D4CE03 /* QuestionModel.swift */; };
+		51AD8A6F28C5DBBA005D5FDE /* NumbersGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51AD8A6E28C5DBBA005D5FDE /* NumbersGameScene.swift */; };
+		51AD8A8328C5E09E005D5FDE /* 1621484094_29-phonoteka_org-p-fon-chisla-i-tsifri-31.png in Resources */ = {isa = PBXBuildFile; fileRef = 51AD8A8228C5E09E005D5FDE /* 1621484094_29-phonoteka_org-p-fon-chisla-i-tsifri-31.png */; };
+		51AD8A8528C5E287005D5FDE /* цыйрыбэк.png in Resources */ = {isa = PBXBuildFile; fileRef = 51AD8A8428C5E287005D5FDE /* цыйрыбэк.png */; };
+		51AD8A8828C5E2CC005D5FDE /* NumbersGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51AD8A8728C5E2CC005D5FDE /* NumbersGameViewController.swift */; };
 		51BEC7C42871E426008B446E /* LabelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BEC7C32871E426008B446E /* LabelModel.swift */; };
 		51F6AD792868890E002C4404 /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F6AD782868890E002C4404 /* Renderer.swift */; };
 		51F6AD7B2868896F002C4404 /* Shader.metal in Sources */ = {isa = PBXBuildFile; fileRef = 51F6AD7A2868896F002C4404 /* Shader.metal */; };
@@ -97,6 +101,10 @@
 		5181BA1B286E43D600D4CE03 /* planet-007.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "planet-007.png"; sourceTree = "<group>"; };
 		5181BA1D286E6BDF00D4CE03 /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		5181BA1F286F205900D4CE03 /* QuestionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionModel.swift; sourceTree = "<group>"; };
+		51AD8A6E28C5DBBA005D5FDE /* NumbersGameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersGameScene.swift; sourceTree = "<group>"; };
+		51AD8A8228C5E09E005D5FDE /* 1621484094_29-phonoteka_org-p-fon-chisla-i-tsifri-31.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1621484094_29-phonoteka_org-p-fon-chisla-i-tsifri-31.png"; sourceTree = "<group>"; };
+		51AD8A8428C5E287005D5FDE /* цыйрыбэк.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "цыйрыбэк.png"; sourceTree = "<group>"; };
+		51AD8A8728C5E2CC005D5FDE /* NumbersGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersGameViewController.swift; sourceTree = "<group>"; };
 		51BEC7C32871E426008B446E /* LabelModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelModel.swift; sourceTree = "<group>"; };
 		51F6AD782868890E002C4404 /* Renderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Renderer.swift; sourceTree = "<group>"; };
 		51F6AD7A2868896F002C4404 /* Shader.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Shader.metal; sourceTree = "<group>"; };
@@ -142,9 +150,11 @@
 		513BF7A9286D1F64000A6305 /* Constants */ = {
 			isa = PBXGroup;
 			children = (
+				51AD8A8228C5E09E005D5FDE /* 1621484094_29-phonoteka_org-p-fon-chisla-i-tsifri-31.png */,
 				5181BA1B286E43D600D4CE03 /* planet-007.png */,
 				5181B9F6286DF36B00D4CE03 /* unnamed.png */,
 				5181B9E0286DE63800D4CE03 /* xo.png */,
+				51AD8A8428C5E287005D5FDE /* цыйрыбэк.png */,
 				5137ECCD286D186D00CD93E6 /* p.png */,
 				5137ECCF286D1AE700CD93E6 /* Constants.swift */,
 			);
@@ -158,6 +168,7 @@
 				513D64C82868A94900C4ACC9 /* QuizGameScene.swift */,
 				5181B9C8286DC45600D4CE03 /* XOGameScene.swift */,
 				5181BA09286E3F3200D4CE03 /* WordleGameScene.swift */,
+				51AD8A6E28C5DBBA005D5FDE /* NumbersGameScene.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -196,6 +207,7 @@
 			children = (
 				5181BA1D286E6BDF00D4CE03 /* LaunchViewController.swift */,
 				516E8DDC2848FB6100F0D1EE /* StartViewController.swift */,
+				51AD8A8728C5E2CC005D5FDE /* NumbersGameViewController.swift */,
 				5149B456287098AE002CB834 /* Navigation.swift */,
 				513BF7A8286D1EFB000A6305 /* Quiz */,
 				5181B9CA286DC4F000D4CE03 /* XO */,
@@ -323,7 +335,9 @@
 				516E8DE52848FB6100F0D1EE /* LaunchScreen.storyboard in Resources */,
 				516E8DE22848FB6100F0D1EE /* Assets.xcassets in Resources */,
 				5137ECCE286D186D00CD93E6 /* p.png in Resources */,
+				51AD8A8328C5E09E005D5FDE /* 1621484094_29-phonoteka_org-p-fon-chisla-i-tsifri-31.png in Resources */,
 				5181B9E1286DE63800D4CE03 /* xo.png in Resources */,
+				51AD8A8528C5E287005D5FDE /* цыйрыбэк.png in Resources */,
 				5181BA1C286E43D600D4CE03 /* planet-007.png in Resources */,
 				516E8DE02848FB6100F0D1EE /* Main.storyboard in Resources */,
 			);
@@ -362,6 +376,7 @@
 				5181B9D3286DC66200D4CE03 /* XOModel.swift in Sources */,
 				513D64C92868A94900C4ACC9 /* QuizGameScene.swift in Sources */,
 				513D64EF2869BBD700C4ACC9 /* Cube.swift in Sources */,
+				51AD8A8828C5E2CC005D5FDE /* NumbersGameViewController.swift in Sources */,
 				516E8DDB2848FB6100F0D1EE /* SceneDelegate.swift in Sources */,
 				5181BA1E286E6BDF00D4CE03 /* LaunchViewController.swift in Sources */,
 				513D64E92868E62E00C4ACC9 /* MatrixMath.swift in Sources */,
@@ -369,6 +384,7 @@
 				5181B9CE286DC62200D4CE03 /* Cell.swift in Sources */,
 				5149B457287098AE002CB834 /* Navigation.swift in Sources */,
 				5181B9D9286DD16900D4CE03 /* AnimationViewController.swift in Sources */,
+				51AD8A6F28C5DBBA005D5FDE /* NumbersGameScene.swift in Sources */,
 				513D64ED2869B9F900C4ACC9 /* Primitive.swift in Sources */,
 				5181B9FA286E0CA500D4CE03 /* WordleViewController.swift in Sources */,
 				5181BA02286E0E6B00D4CE03 /* QuizMenuViewController.swift in Sources */,

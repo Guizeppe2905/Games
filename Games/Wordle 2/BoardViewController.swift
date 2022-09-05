@@ -13,9 +13,6 @@ protocol BoardViewControllerDataSource: AnyObject {
 }
 class BoardViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate, UICollectionViewDataSource {
     weak var datasource: BoardViewControllerDataSource?
-    
-  //  var numberOfGreenCells = 0
-    
     private let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.minimumInteritemSpacing = 4
@@ -64,16 +61,6 @@ extension BoardViewController {
         if let letter = guesses[indexPath.section][indexPath.row] {
             cell.configure(with: letter)
         }
-        //       let rowIndex = indexPath.section
- //       let row = indexPath.row
-  //      let count = guesses[rowIndex].compactMap({ $0 }).count
-   //     let cells = [cell, cell, cell, cell, cell]
-        
-      //  if count == 5 &&
-        
-   //     if cell.backgroundColor == Constants.Colors.forestGreen {
-    //        numberOfGreenCells += 1
-     //   } 
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -83,6 +70,9 @@ extension BoardViewController {
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 2, left: 2, bottom: 2, right: 2)
+    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        //
     }
 }
 
